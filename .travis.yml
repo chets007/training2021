@@ -5,8 +5,8 @@ jdk:
 # git strips the wrapper jar file so we have to force its download during the build
 
 install:
-- mvn -N io.takari:maven:wrapper
-- ./mvnw install -DskipTests=true -Dmaven.javadoc.skip=true -B -V
+  - mvn -N io.takari:maven:wrapper
+  - ./mvnw install -DskipTests=true -Dmaven.javadoc.skip=true -B -V
 
 script: ./mvnw clean install
 
@@ -14,4 +14,4 @@ script: ./mvnw clean install
 jobs:
   include:
     - stage: Test
-      script: ./mvnw clean test
+    - script: ./mvnw clean test
